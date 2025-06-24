@@ -1,0 +1,93 @@
+<header class="header fixed clearfix">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <!-- header-left start -->
+        <div id="logodiv" class="header-left clearfix">
+          <div class="site-slogan"></div>
+          <!-- <div class="logo mycustomlogo">
+            <a href="http://weldtechindustries.com/">
+              <span id="logo">Weld Tech Industries</span>
+            </a>
+          </div> -->
+          <div class="logo">
+            <a routerLink="/">
+              <img id="logo" src="assets/images/logo/weld_tech_logo.png" style="height: 60px;" alt="Weld Tech">
+            </a>
+          </div>
+        </div>
+        <!-- header-left end -->
+      </div>
+
+      <div class="col-md-9">
+        <div class="header-right clearfix">
+          <div class="main-navigation animated">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right" style="cursor: pointer;">
+
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      <a [routerLink]="['/']" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-home"></i>
+                      </a>
+                    </li>
+
+                    <li routerLinkActive="active">
+                      <a [routerLink]="['/about-us']" class="dropdown-toggle" data-toggle="dropdown">ABOUT</a>
+                    </li>
+
+                    <li routerLinkActive="active" class="dropdown">
+                      <a style="cursor: pointer;" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS</a>
+                      <ul class="dropdown-menu">
+                        <li routerLinkActive="active" *ngFor="let items of productList">
+                          <a *ngIf="items.id == 0" [routerLink]="['/', 'all-products']" class="dropdown-toggle" data-toggle="dropdown">{{items.name}}</a>
+                          <a *ngIf="items.id != 0" [routerLink]="['/', 'products', items.routename]" class="dropdown-toggle" data-toggle="dropdown">{{items.name}}</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li routerLinkActive="active">
+                      <a [routerLink]="['/enquiry']" class="dropdown-toggle" data-toggle="dropdown">ENQUIRY</a>
+                    </li>
+
+                    <li routerLinkActive="active">
+                      <a [routerLink]="['/contact-us']" class="dropdown-toggle" data-toggle="dropdown">CONTACT</a>
+                    </li>
+
+                    <!-- Social Links -->
+                    <li class="customsocial">
+                      <a class="facebook" title="Facebook" target="_blank" href="https://www.facebook.com/weldtechindustries">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                      <a class="twitter" title="Twitter" target="_blank" href="https://twitter.com/WeldTechInc">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                      <a class="googleplus" title="Google Plus" target="_blank" href="https://plus.google.com/u/0/b/110463863258216044216/110463863258216044216">
+                        <i class="fa fa-google-plus"></i>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

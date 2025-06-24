@@ -1,0 +1,31 @@
+hr {
+    color: #f00;
+    background-color: #f00;
+    height: 5px;
+}
+
+.jumbotron p {
+    margin-bottom: 15px !important;
+    font-size: 15px !important;
+    font-weight: unset;
+}
+
+.carousel-img{
+    height: 230px;
+    width: 100%;
+}
+
+.h6-subhead{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+table tr td{
+    text-align: left;
+}
+
+#tab_galvanized_2 {
+    ul > li {
+        line-height: 3rem;
+    }
+}

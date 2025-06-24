@@ -1,0 +1,117 @@
+<div class="page-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-home pr-10"></i>
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li>
+            <a [routerLink]="['/all-products']">Products</a>
+          </li>
+          <li class="active">Binding Wire</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h4 class="page-header">Binding Wire</h4>
+        <div class="row">
+          <div class="col-md-3">
+            <ul class="nav nav-pills white" role="tablist">
+              <li class="active">
+                <a href="#product-images" role="tab" data-toggle="tab" title="images">
+                  <i class="fa fa-camera pr-5"></i> Photo</a>
+              </li>
+            </ul>
+            <div class="tab-content clear-style">
+              <div class="tab-pane active" id="product-images">
+                <div class="owl-carousel content-slider-with-controls-bottom">
+                  <div class="overlay-container">
+                    <img src="assets/images/galvanized-binding-wire-1622576.jpg" style="height: 200px; width:100%;" alt="">
+                    <a href="assets/images/galvanized-binding-wire-1622576.jpg" class="popup-img overlay">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+                  <div class="overlay-container">
+                    <img src="assets/images/annealed-wires-165156.jpg" style="height: 200px; width:100%;" alt="">
+                    <a href="assets/images/annealed-wires-165156.jpg" class="popup-img overlay">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-9">
+            <div class="sidebar">
+              <div class="side product-item vertical-divider-left">
+                <div class="tabs-style-2">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                      <a href="#h2tab1" role="tab" data-toggle="tab">
+                        <i class="fa fa-file-text-o pr-5"></i>Description</a>
+                    </li>
+                    <li>
+                      <a href="#h2tab2" role="tab" data-toggle="tab">
+                        <i class="fa fa-files-o pr-5"></i>Specifications</a>
+                    </li>
+                  </ul>
+                  <!-- Tab panes -->
+                  <div class="tab-content padding-top-clear padding-bottom-clear">
+                    <div class="tab-pane fade in active" id="h2tab1">
+                      <div class="space-top"></div>
+                      <h6 class="h6-subhead">Application</h6>
+                      <ol>
+                        <li>
+                          Construction line
+                        </li>
+                        <li>
+                          For centing purpose
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="tab-pane fade" id="h2tab2">
+                      <div class="space-top"></div>
+                      <div class="row table-responsive mt-20">
+                        <div class="col-sm-12">
+                          <table class="table table-hover table-bordered table-striped">
+                            <tr>
+                              <th class="text-center">SIZE</th>
+                              <th class="text-center">18SWG. AND 20SWG</th>
+                            </tr>
+                            <tr>
+                              <td>Coil Size</td>
+                              <td>20kg – 30kg</td>
+                            </tr>
+                            <tr>
+                              <td>Coil Wt</td>
+                              <td>40kg to 60Kg</td>
+                            </tr>
+                            <tr>
+                              <td>Quality</td>
+                              <td>Soft & Black</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a routerLink="/enquiry" class="btn btn-white btn-light-gray btn-sm btn-animation btn-animation--slide-to-right">Enquiry Now</a>
+                <!-- -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

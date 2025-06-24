@@ -1,0 +1,125 @@
+<div class="page-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-home pr-10"></i>
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li class="active">Enquiry</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-12">
+        <h1 class="page-title">Enquiry</h1>
+
+        <div class="contact-form">
+          <form [formGroup]="enquiryForm" (ngSubmit)="sendMessage()" class="margin-bottom-clear">
+            <div class="row mt-20">
+
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" placeholder="Contact Person*" formControlName="userName" [ngClass]="{ 'text-error-border': (enquiryForm.controls['userName'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['userName'].dirty || enquiryForm.controls['userName'].touched)) }">
+                <i class="fa fa-user form-control-feedback enq-form-icon"></i>
+                <div *ngIf="(enquiryForm.controls['userName'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['userName'].dirty || enquiryForm.controls['userName'].touched))"
+                  class="text-error">
+                  <span *ngIf="enquiryForm.controls['userName'].hasError('required') ">
+                    Please enter your name.
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" placeholder="Company Name*" formControlName="companyName" [ngClass]="{ 'text-error-border': (enquiryForm.controls['companyName'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['companyName'].dirty || enquiryForm.controls['companyName'].touched)) }">
+                <i class="fa fa-industry form-control-feedback enq-form-icon"></i>
+                <div *ngIf="(enquiryForm.controls['companyName'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['companyName'].dirty || enquiryForm.controls['companyName'].touched))"
+                  class="text-error">
+                  <span *ngIf="enquiryForm.controls['companyName'].hasError('required') ">
+                    Please enter your company name.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <ng-select class="custom" placeholder="Country*" formControlName="country" [items]="countrylist" bindLabel="name">
+                </ng-select>
+                <div *ngIf="(enquiryForm.controls['country'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['country'].dirty || enquiryForm.controls['country'].touched))"
+                  class="text-error">
+                  <span *ngIf="enquiryForm.controls['country'].hasError('required') ">
+                    Please select your country.
+                  </span>
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" placeholder="Email ID*" formControlName="email" [ngClass]="{ 'text-error-border': (enquiryForm.controls['email'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['email'].dirty || enquiryForm.controls['email'].touched)) }">
+                <i class="fa fa-envelope form-control-feedback enq-form-icon"></i>
+                <div *ngIf="(enquiryForm.controls['email'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['email'].dirty || enquiryForm.controls['email'].touched))"
+                  class="text-error">
+                  <span *ngIf="enquiryForm.controls['email'].hasError('required') ">
+                    Please enter your email address.
+                  </span>
+                  <span *ngIf="enquiryForm.controls['email'].hasError('pattern') ">
+                    Please enter a valid email address.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <input type="number" class="form-control" placeholder="Phone Number" formControlName="pnumber">
+                <i class="fa fa-phone form-control-feedback enq-form-icon"></i>
+              </div>
+              <div class="form-group col-sm-6">
+                <input type="number" class="form-control" placeholder="Mobile Number*" formControlName="mnumber" [ngClass]="{ 'text-error-border': (enquiryForm.controls['mnumber'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['mnumber'].dirty || enquiryForm.controls['mnumber'].touched)) }">
+                <i class="fa fa-mobile form-control-feedback enq-form-icon"></i>
+                <div *ngIf="(enquiryForm.controls['mnumber'].invalid && (isEnquiryFormSubmitted || enquiryForm.controls['mnumber'].dirty || enquiryForm.controls['mnumber'].touched))"
+                  class="text-error">
+                  <span *ngIf="enquiryForm.controls['mnumber'].hasError('required') ">
+                    Please enter your mobile number.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <textarea formControlName="note" class="form-control rounded-0" placeholder="Enquiry Note" rows="5"></textarea>
+                <i class="fa fa-pencil form-control-feedback enq-form-icon"></i>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <ngx-invisible-recaptcha #captchaElem [siteKey]="siteKey" (success)="handleSuccess($event)" [type]="type" [badge]="badge"
+                  [ngModel]="recaptcha" [ngModelOptions]="{ standalone: true }">
+                </ngx-invisible-recaptcha>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <button type="submit" class="submit-button btn btn-default" id="btnSendMessage" title="Send Enquiry">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <aside class="col-md-3">
+        <div class="sidebar">
+          <div class="side vertical-divider-left">
+            <img src="assets/images/enq.jpg" title="Enquiry" alt="" /> 
+          </div>
+        </div>
+      </aside> -->
+    </div>
+  </div>
+</section>

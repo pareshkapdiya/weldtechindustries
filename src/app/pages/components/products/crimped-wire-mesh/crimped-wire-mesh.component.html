@@ -1,0 +1,163 @@
+<div class="page-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-home pr-10"></i>
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li>
+            <a [routerLink]="['/all-products']">Products</a>
+          </li>
+          <li class="active">Crimped Wire Mesh</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+
+      <div class="main col-md-12">
+        <h4 class="page-header">Crimped Wire Mesh</h4>
+
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="nav nav-pills white" role="tablist">
+              <li class="active">
+                <a href="#product-images" role="tab" data-toggle="tab" title="images">
+                  <i class="fa fa-camera pr-5"></i> Photo</a>
+              </li>
+            </ul>
+            <div class="tab-content clear-style">
+              <div class="tab-pane active" id="product-images">
+                <div class="owl-carousel content-slider-with-controls-bottom">
+                  <div class="overlay-container">
+                    <img src="assets/images/crimped_wire.jpg" class="carousel-img" alt="">
+                    <a href="assets/images/crimped_wire.jpg" class="popup-img overlay" title="crimped wire">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+
+                  <div class="overlay-container">
+                    <img src="assets/images/S.S-WELDED-WIRE-MESH.jpg" class="carousel-img" alt="">
+                    <a href="assets/images/S.S-WELDED-WIRE-MESH.jpg" class="popup-img overlay" title="S.S-WELDED-WIRE-MESH">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+
+                  <div class="overlay-container">
+                    <img src="assets/images/crimped_wire1.jpg" class="carousel-img" alt="">
+                    <a href="assets/images/crimped_wire1.jpg" class="popup-img overlay" title="rimped wire">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+
+                  <div class="overlay-container">
+                    <img src="assets/images/crimped_wire3.jpg" class="carousel-img" alt="">
+                    <a href="assets/images/crimped_wire3.jpg" class="popup-img overlay" title="rimped wire">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-8">
+            <div class="sidebar">
+              <div class="side product-item vertical-divider-left">
+                <p align="justify">
+                  We feel proud to say that with the help of high quality products provided by us, we have been able to establish ourselves
+                  among the leading
+                  <b>Crimped Net</b> Manufacturers, Crimped Net Suppliers. Our Crimped Net is made of crimped metal wire in
+                  waves, with the position of the two waves opposite to each other to guarantee the uniformity of the opening.
+                </p>
+                <p align="justify">
+                  With our main mission of customer satisfaction with superior quality products, we always deliver items on time and that too
+                  at most competitive prices.
+                </p>
+                <p align="justify">
+                  Given sizes are our fast moving sizes. We are always keen to handle fresh inquiries and would put in our best efforts to
+                  develop other sizes. Infact, we do make rectangular sizes in crimped net. We can provide maximum 3.65 mt
+                  of width.
+                </p>
+                <p align="justify">
+                  Material: G.I Wire, Mild steel wire, Stainless steel wire
+                </p>
+                <p align="justify">
+                  Weaving: Crimped before weaving, double crimped, single crimped.
+                </p>
+                <p align="justify">
+                  <span>
+                    -Galvanized crimped wire mesh
+                  </span>
+                  <span>-Hot dip galvanized crimped wire mesh -Galvanized crimped wire mesh
+                  </span>
+                  <span>
+                    -Electroplated galvanized crimped wire mesh
+                  </span>
+                  <span>
+                    -Stainless steel crimped wire mesh
+                  </span>
+                </p>
+
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h6 class="h6-subhead">Application</h6>
+                    <ol>
+                      <li>Vibrating screen</li>
+                      <li>Glass factory</li>
+                      <li>Coal mine</li>
+                      <li>Petroleum</li>
+                      <li>Hardware products</li>
+                      <li>Mining</li>
+                      <li>construction</li>
+                    </ol>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="separator"></div>
+
+<div class="section clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <h5>Crimped Wire Mesh Jali Weight</h5>
+          <table class="table table-hover table-striped table-bordered">
+            <thead>
+              <tr>
+                <th class="text-center">Sr.No</th>
+                <th class="text-center">SIZE</th>
+                <th class="text-center">ft</th>
+                <th class="text-center">App.Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of crimpedWireMeshDetails">
+                <td>{{data.id}}</td>
+                <td>{{data.Size}}</td>
+                <td>{{data.ft}}</td>
+                <td>{{data.weight}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a routerLink="/enquiry" class="btn btn-white btn-light-gray btn-sm btn-animation btn-animation--slide-to-right">Enquiry Now</a>
+      </div>
+    </div>
+  </div>
+</div>
