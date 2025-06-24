@@ -1,0 +1,148 @@
+<!-- footer start (Add "light" class to #footer in order to enable light footer) -->
+<!-- ================ -->
+<footer id="footer">
+
+  <!-- .footer start -->
+  <!-- ================ -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-content">
+            <div class="logo-footer">
+              <a routerLink="/">
+                <img id="logo" src="assets/images/logo/weld_tech_logo.png" style="height: 55px;" alt="Weld Tech">
+              </a>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p align="justify">
+                  <b>Mr. Bhavesh Patel</b> the Owner of the company has gathered a huge team of skilled professionals who endeavor
+                  to take this company to great heights.</p>
+                <ul class="social-links circle">
+                  <li class="facebook">
+                    <a target="_blank" href="https://www.facebook.com/weldtechindustries">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="twitter">
+                    <a target="_blank" href="https://twitter.com/WeldTechInc">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="googleplus">
+                    <a target="_blank" href="https://plus.google.com/u/0/b/110463863258216044216/110463863258216044216">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-6">
+                <ul class="list-icons">
+                  <li>
+                    <i class="fa fa-map-marker pr-10"></i> 92, G.I.D.C., Gozaria, Ta. Vijapur, Dist. Mehsana (Gujarat), India. Pin: (382825)
+                  </li>
+                  <li>
+                    <i class="fa fa-fax pr-10"></i> +91 99250 98398 </li>
+                  <li>
+                    <i class="fa fa-envelope-o pr-10"></i> info@weldtechindustries.com</li>
+                </ul>
+              </div>
+            </div>
+            <a [routerLink]="['/about-us']" class="link">
+              <span>Read More</span>
+            </a>
+          </div>
+        </div>
+        <div class="space-bottom hidden-lg hidden-xs"></div>
+        <div class="col-sm-6 col-md-2">
+          <div class="footer-content">
+            <h2>Links</h2>
+            <nav>
+              <ul class="nav nav-pills nav-stacked">
+                <li>
+                  <a [routerLink]="['/']">HOME</a>
+                </li>
+                <li class="active">
+                  <a [routerLink]="['/about-us']">ABOUT</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/all-products']">PRODUCTS</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/enquiry']">ENQUIRY</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/contact-us']">CONTACT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-md-offset-1">
+          <div class="footer-content">
+            <h2>Products</h2>
+            <div class="gallery row">
+              <div class="gallery-item col-xs-4" *ngFor="let items of productList">
+                <div class="overlay-container">
+                  <img class="productimg" src="assets/images/{{items.imagepath}}" alt="">
+                  <a [routerLink]="['/', 'products', items.routeName]" title="{{items.name}}" class="overlay small">
+                    <i class="fa fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-bottom hidden-lg hidden-xs"></div>
+    </div>
+  </div>
+  <!-- .footer end -->
+
+  <!-- .subfooter start -->
+  <div class="subfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Copyright © 2019. All Rights Reserved</p>
+        </div>
+        <div class="col-md-6">
+          <nav class="navbar navbar-default">
+            <!-- Toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a [routerLink]="['/']">Home</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/about-us']">About</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/all-products']">Products</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/enquiry']">Enquiry</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/contact-us']">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .subfooter end -->
+
+</footer>
+<!-- footer end -->

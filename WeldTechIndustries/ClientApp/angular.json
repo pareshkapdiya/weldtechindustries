@@ -1,0 +1,170 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "weldtechindustries": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/weldtechindustries",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/web.config"
+            ],
+            "styles": [
+              "./node_modules/ngx-toastr/toastr.css",
+              "src/styles.scss",
+              "src/assets/bootstrap/css/bootstrap.css",
+              "src/assets/fonts/font-awesome/css/font-awesome.css",
+              "src/assets/plugins/rs-plugin-5/css/settings.css",
+              "src/assets/plugins/rs-plugin-5/css/layers.css",
+              "src/assets/plugins/rs-plugin-5/css/navigation.css",
+              "src/assets/plugins/magnific-popup/magnific-popup.css",
+              "src/assets/css/animations.css",
+              "src/assets/plugins/owl-carousel/assets/owl.carousel.css",
+              "src/assets/plugins/owl-carousel/assets/owl.theme.default.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/skins/red.css",
+              "src/assets/css/custom.css"
+            ],
+            "scripts": [
+              "src/assets/plugins/jquery.min.js",
+              "src/assets/bootstrap/js/bootstrap.js",
+              "src/assets/plugins/rs-plugin-5/js/jquery.themepunch.tools.min.js",
+              "src/assets/plugins/rs-plugin-5/js/jquery.themepunch.revolution.min.js",
+              "src/assets/plugins/isotope/imagesloaded.pkgd.min.js",
+              "src/assets/plugins/isotope/isotope.pkgd.min.js",
+              "src/assets/plugins/owl-carousel/owl.carousel.js",
+              "src/assets/plugins/magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/plugins/appear/jquery.appear.js",
+              "src/assets/plugins/countTo/jquery.countTo.js",
+              "src/assets/js/template.js",
+              "src/assets/js/custom.js",
+              "src/assets/plugins/rs-plugin-5/js/extensions/revolution.extension.slideanims.min.js",
+              "src/assets/plugins/rs-plugin-5/js/extensions/revolution.extension.layeranimation.min.js",
+              "src/assets/plugins/rs-plugin-5/js/extensions/revolution.extension.navigation.min.js"
+            ],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "weldtechindustries:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "weldtechindustries:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "weldtechindustries:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "weldtechindustries-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "weldtechindustries:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "weldtechindustries:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "weldtechindustries"
+}

@@ -1,0 +1,155 @@
+<!-- map -->
+<div class="banner">
+  <div id="map-canvas">
+    <iframe width="100%" height="401" id="gmap_canvas" src="https://maps.google.com/maps?q=92%2C%20G.I.D.C%20%2CGozaria%2C%20Mehsana%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <a href="https://www.pureblack.de"></a>
+  </div>
+
+  <!-- <div class="mapouter">
+    <div class="gmap_canvas map-responsive">
+      <iframe width="555" height="401" id="gmap_canvas" src="https://maps.google.com/maps?q=92%2C%20G.I.D.C%20%2CGozaria%2C%20Mehsana%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      <a href="https://www.pureblack.de"></a>
+    </div>
+  </div> -->
+
+</div>
+
+<div class="page-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <i class="fa fa-home pr-10"></i>
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li class="active">Contact Us</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="main col-md-8">
+        <h1 class="page-title">Contact Us</h1>
+        <p>Have a question or concern regarding our products? Please fill out the form below:</p>
+        <div class="contact-form">
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()">
+
+            <div class="form-group has-feedback">
+              <label for="name">Name*</label>
+              <input type="text" class="form-control" id="name" formControlName="userName" placeholder="" [ngClass]="{ 'text-error-border': (contactForm.controls['userName'].invalid && (iscontactFormSubmitted || contactForm.controls['userName'].dirty || contactForm.controls['userName'].touched)) }">
+              <i class="fa fa-user form-control-feedback"></i>
+              <div *ngIf="(contactForm.controls['userName'].invalid && (iscontactFormSubmitted || contactForm.controls['userName'].dirty || contactForm.controls['userName'].touched))"
+                class="text-error">
+                <span *ngIf="contactForm.controls['userName'].hasError('required') ">
+                  Please enter your name.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="email">Email*</label>
+              <input type="email" class="form-control" id="email" formControlName="Email" placeholder="" [ngClass]="{ 'text-error-border': (contactForm.controls['Email'].invalid && (iscontactFormSubmitted || contactForm.controls['Email'].dirty || contactForm.controls['Email'].touched)) }">
+              <i class="fa fa-envelope form-control-feedback"></i>
+              <div *ngIf="(contactForm.controls['Email'].invalid && (iscontactFormSubmitted || contactForm.controls['Email'].dirty || contactForm.controls['Email'].touched))"
+                class="text-error">
+                <span *ngIf="contactForm.controls['Email'].hasError('required') ">
+                  Please enter your email address.
+                </span>
+                <span *ngIf="contactForm.controls['Email'].hasError('pattern') ">
+                  Please enter a valid email address.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="subject">Subject*</label>
+              <input type="text" class="form-control" id="subject" formControlName="Subject" placeholder="" [ngClass]="{ 'text-error-border': (contactForm.controls['Subject'].invalid && (iscontactFormSubmitted || contactForm.controls['Subject'].dirty || contactForm.controls['Subject'].touched)) }">
+              <i class="fa fa-navicon form-control-feedback"></i>
+              <div *ngIf="(contactForm.controls['Subject'].invalid && (iscontactFormSubmitted || contactForm.controls['Subject'].dirty || contactForm.controls['Subject'].touched))"
+                class="text-error">
+                <span *ngIf="contactForm.controls['Subject'].hasError('required') ">
+                  Please enter subject name.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="message">Message*</label>
+              <textarea class="form-control" rows="6" id="message" formControlName="Message" placeholder="" [ngClass]="{ 'text-error-border': (contactForm.controls['Message'].invalid && (iscontactFormSubmitted || contactForm.controls['Message'].dirty || contactForm.controls['Message'].touched)) }"></textarea>
+              <i class="fa fa-pencil form-control-feedback"></i>
+              <div *ngIf="(contactForm.controls['Message'].invalid && (iscontactFormSubmitted || contactForm.controls['Message'].dirty || contactForm.controls['Message'].touched))"
+                class="text-error">
+                <span *ngIf="contactForm.controls['Message'].hasError('required') ">
+                  Please enter your message.
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group has-feedback">
+              <ngx-invisible-recaptcha #captchaElem [siteKey]="siteKey" (success)="handleSuccess($event)" [type]="type" [badge]="badge"
+                [ngModel]="recaptcha" [ngModelOptions]="{ standalone: true }">
+              </ngx-invisible-recaptcha>
+            </div>
+
+            <button type="submit" class="submit-button btn btn-default" id="btnSubmitContact" title="Contact to WeldTech">Submit</button>
+
+          </form>
+        </div>
+      </div>
+
+      <aside class="col-md-4">
+        <div class="sidebar">
+          <div class="side vertical-divider-left">
+            <h3 class="title">Weld Tech Industries</h3>
+            <ul class="list">
+              <li>
+                <strong></strong>
+              </li>
+              <li>
+                <i class="fa fa-user pr-10"></i> Mr. Bhavesh Patel
+              </li>
+              <li>
+                <i class="fa fa-home pr-10"></i>92, G.I.D.C., Gozaria, Ta. Vijapur, Dist. Mehsana (Gujarat), India</li>
+              <li>
+                <i class="fa fa-mobile pr-10"></i>
+                Mobile No. : +91 99250 98398</li>
+              <li>
+                <i class="fa fa-envelope pr-10"></i>
+                <a href="javascript:void(0);">info@weldtechindustries.com</a>
+              </li>
+              <li>
+                <i class="fa fa-globe pr-10"></i>
+                <a href="javascript:void(0);">http://weldtechindustries.com</a>
+              </li>
+            </ul>
+            <ul class="social-links colored circle large">
+              <li class="facebook">
+                <a target="_blank" href="https://www.facebook.com/weldtechindustries">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="twitter">
+                <a target="_blank" href="https://twitter.com/WeldTechInc">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="googleplus">
+                <a target="_blank" href="https://plus.google.com/u/0/b/110463863258216044216/110463863258216044216">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
